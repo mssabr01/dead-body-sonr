@@ -6,7 +6,7 @@ from dbs_helpers import *
 # root window
 root = tk.Tk()
 root.geometry('500x500')
-root.title('Notebook Demo')
+root.title('Dead Body Sonr')
 
 # create a notebook
 notebook = ttk.Notebook(root)
@@ -22,12 +22,14 @@ orgsframe.pack(fill='both', expand=True)
 homeframe.pack(fill='both', expand=True)
 
 #Dirt Frame
-add_person_b = Button(dirtframe, text='Add Person')
-add_person_b.pack(side=LEFT)
+person_var = tk.StringVar()
+dir_var = tk.StringVar()
+person_entry = tk.Entry(homeframe)
+person_entry.pack()
+dir_entry = tk.Entry(root,textvar = dir_var)
 dirttree = ttk.Treeview(dirtframe)
 dirttree = populate_dirttree(filepath="./files/dirttree.json",treeview=dirttree)
 dirttree.pack()
-
 
 # add frames to notebook
 

@@ -38,8 +38,8 @@ dir_var = tk.StringVar()
 dir_btn = Button(dirtframe, text ='Choose Directory', command = lambda:pickdir()).grid(row=1,column=0)
 dir_entry = tk.Entry(dirtframe, textvariable=dir_var, state=DISABLED).grid(row=1, column=1)
 
-global dirttree
-dirttree = ttk.Treeview(dirtframe, column='c1')
+dirttree = ttk.Treeview(dirtframe, column='')
+dirttree.column("# 0", stretch=YES, width=400)
 dirttree = populate_dirttree(filepath=dirt_json,treeview=dirttree).grid(row=3, columnspan=3)
 add_btn = Button(dirtframe, 
                  text = 'Add dirty person', 
@@ -47,10 +47,10 @@ add_btn = Button(dirtframe,
                  ).grid(row=2,column=0)
 
 def add_n_refresh_tree():
-    #dirttree.grid_forget()
     dirttree = ttk.Treeview(dirtframe, column='c1')
     add_dirty_person(name=person_var.get(), dirtpath=dir_var.get(), filepath=dirt_json)
-    dirttree = populate_dirttree(filepath=dirt_json, treeview=dirttree).grid(row=3,columnspan=3)
+    dirttree = populate_dirttree(filepath=dirt_json, 
+                                 treeview=dirttree).grid(row=3,columnspan=3)
 
 # add frames to notebook
 

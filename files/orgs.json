@@ -1,0 +1,22 @@
+[
+    {
+        "id": "e4725163-ca1b-44a7-bed4-8aa3c8de6c90",
+        "name": "Wikileaks",
+        ".sonr": "wikileaks.snr"
+    },
+    {
+        "id": "26e279de-ce30-4a8a-a3a9-9dd1829b57b4",
+        "name": "New York Times",
+        ".sonr": "nyt.snr"
+    },
+    {
+        "id": "99219e9d-d8cb-4ffd-a8f9-b4fd44c45332",
+        "name": "Anderson Cooper",
+        ".sonr": "CooperScoops.snr"
+    },
+    {
+        "id": "703e5172-dbd7-4c7f-978c-b1472345f058",
+        "name": "BBC News",
+        ".sonr": "bbc.sonr"
+    }
+]

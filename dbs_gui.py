@@ -44,11 +44,17 @@ add_btn = Button(homeframe,
                  command = lambda:add_n_refresh_wallets()
                  ).grid(row=1,column=0)
 
+add_btn = Button(root,
+                 text = 'I Died',
+                 command = lambda:fire_the_dirt_cannon()
+                 ).pack()
 
 def add_n_refresh_wallets():
     add_wallet(address = wallet_var.get(), filepath = wallets_txt)
     wallets_msg.set(populate_wallet_list(filepath = wallets_txt))
     wallet_var.set('')
+
+
 
 #Orgs Frame
 org_var = tk.StringVar()
@@ -70,6 +76,8 @@ add_btn = Button(orgsframe,
 def add_n_refresh_orgs_tree():
     orgstree = ttk.Treeview(orgsframe, column='c1')
     add_news_org(name=org_var.get(), sonr=sonr_var.get(), filepath=orgs_json)
+    org_var.set("")
+    sonr_var.set("")
     orgstree = populate_orgstree(filepath=orgs_json, 
                                  treeview=orgstree).grid(row=3,columnspan=3)
 
@@ -93,6 +101,8 @@ add_btn = Button(dirtframe,
 def add_n_refresh_dirt_tree():
     dirttree = ttk.Treeview(dirtframe, column='c1')
     add_dirty_person(name=person_var.get(), dirtpath=dir_var.get(), filepath=dirt_json)
+    person_var.set("")
+    dir_var.set("")
     dirttree = populate_dirttree(filepath=dirt_json, 
                                  treeview=dirttree).grid(row=3,columnspan=3)
 

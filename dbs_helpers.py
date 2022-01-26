@@ -2,6 +2,11 @@ import json
 import uuid
 import os
 
+def fire_the_dirt_cannon():
+    #zip up each directory for each user
+
+    #send each zip to each .snr address in orgs file
+
 def add_wallet(address, filepath):
     f = open(filepath, 'a')
     f.write('\n' + address)

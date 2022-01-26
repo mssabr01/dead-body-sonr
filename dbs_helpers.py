@@ -2,6 +2,19 @@ import json
 import uuid
 import os
 
+def add_wallet(address, filepath):
+    f = open(filepath, 'a')
+    f.write('\n' + address)
+    f.close()
+
+def populate_wallet_list(filepath):
+    f = open(filepath, 'r')
+    msg = "My Wallets:"
+    wallets = f.read().split()
+    for w in wallets:
+        msg = msg + '\n' + w
+    return msg
+
 def add_dirty_person(name, dirtpath, filepath):
     ##
     # Adds a person to the dirt json file
